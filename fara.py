@@ -235,10 +235,17 @@ def send_requests(config):
     print(f"   📊 Success rate: {success_rate:.1f}%")
     print("=" * 60)
     
-    # Save to file
+    # Save to file inside `results/` folder (ignored by git)
     if config['save_result']:
+        results_dir = 'results'
+        try:
+            os.makedirs(results_dir, exist_ok=True)
+        except Exception:
+            pass
+
         filename = f"result_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt"
-        with open(filename, 'w', encoding='utf-8') as f:
+        filepath = os.path.join(results_dir, filename)
+        with open(filepath, 'w', encoding='utf-8') as f:
             f.write("Request Sending Report\n")
             f.write("=" * 50 + "\n")
             f.write(f"Date: {datetime.now()}\n")
@@ -254,7 +261,7 @@ def send_requests(config):
             f.write(f"Actual rate: {actual_rate:.2f} requests/second\n")
             f.write(f"Total time: {elapsed_time:.2f} seconds\n")
             f.write(f"Success rate: {success_rate:.1f}%\n")
-        print(f"\n💾 Results saved to '{filename}'")
+        print(f"\n💾 Results saved to '{filepath}'")
 
 def main():
     """Main function"""

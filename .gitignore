@@ -41,6 +41,7 @@ MANIFEST
 # Results and logs
 result_*.txt
 *.log
+results/
 
 # OS
 .DS_Store
