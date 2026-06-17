@@ -90,7 +90,7 @@ The application will prompt for execution parameters:
 
 | Variable | Description |
 |----------|-------------|
-| API_URL | API endpoint (default: https://gateway.farabixo.com/api/v2/orders) |
+| API_URL | API endpoint (default: https://gateway.example.com/api/v2/orders) |
 | API_TOKEN | Bearer token for authentication |
 | INSTRUMENT_IDENTIFICATION | Trading instrument ID (default: IRO3PRIZ0001) |
 | ORDER_SIDE | Order direction: 1 (buy) or -1 (sell) |

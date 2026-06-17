@@ -30,7 +30,8 @@ class Config:
             raise ValueError("⚠️ API_TOKEN not found in .env file. Please set it before running.")
         
         return {
-            "authorization": f"Bearer {Config.API_TOKEN}",
+            "Authorization": f"Bearer {Config.API_TOKEN}",
+            "Content-Type": "application/json",
         }
     
     @staticmethod
@@ -42,11 +43,13 @@ class Config:
             "orderSide": Config.ORDER_SIDE,
             "parentId": 0,
             "investorBourseCodeId": 0,
+            "validateAssetOnSell": False,
             "quantity": Config.QUANTITY,
             "price": Config.PRICE,
+            "validityDate": None,
             "validityType": 1,
             "deviceType": 1,
-            "strategyLegs": "null"
+            "strategyLegs": None
         }
     
     @staticmethod
